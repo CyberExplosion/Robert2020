@@ -74,6 +74,118 @@ autonomousRobert newRobert(LM1,LM11,LM2,LM21, RM1, RM11, RM2, RM21);
 /*                                                                           */
 /*  You must modify the code to add your own robot specific commands here.   */
 /*---------------------------------------------------------------------------*/
+
+ void userWheelFwd(vex::motor LM1,vex::motor LM11,
+vex::motor LM2,vex::motor LM21,
+vex::motor RM1,vex::motor RM11,
+vex::motor RM2,vex::motor RM21, int speed)
+ {
+  LM2.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  LM21.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  LM1.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  LM11.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  RM2.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  RM21.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  RM1.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  RM11.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  return;
+ }
+
+
+ void userWheelStop(vex::motor LM1,vex::motor LM11,
+                    vex::motor LM2,vex::motor LM21,
+                    vex::motor RM1,vex::motor RM11,
+                    vex::motor RM2,vex::motor RM21)
+ {
+    LM1.stop();
+    LM11.stop();
+    LM2.stop();
+    LM21.stop();
+    RM1.stop();
+    RM11.stop();
+    RM2.stop();
+    RM21.stop();
+    return;
+ }
+
+
+ void userWheelPoppingRev(vex::motor LM1,vex::motor LM11,
+                          vex::motor LM2,vex::motor LM21,
+                          vex::motor RM1,vex::motor RM11,
+                          vex::motor RM2,vex::motor RM21, int speed)
+ {
+  LM2.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
+  LM21.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
+  LM1.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
+  LM11.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
+  RM2.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
+  RM21.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
+  RM1.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
+  RM11.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);  
+
+  return;
+ }
+
+  void userWheelPoppingFwd(vex::motor LM1,vex::motor LM11,
+                          vex::motor LM2,vex::motor LM21,
+                          vex::motor RM1,vex::motor RM11,
+                          vex::motor RM2,vex::motor RM21, int speed)
+ {
+  LM2.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  LM21.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  LM1.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  LM11.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  RM2.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  RM21.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  RM1.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  RM11.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);  
+
+  return;
+ }
+
+//ELEVATOR FUNCTIONS
+ void userElevatorStop(vex::motor Elevator,vex::motor Elevator1, vex::motor Elevator2)
+ {
+  Elevator.stop(vex::brakeType::hold);
+  Elevator1.stop(vex::brakeType::hold);
+  Elevator2.stop(vex::brakeType::hold);
+  return;
+ }
+
+ void userElevatorRev(vex::motor Elevator,vex::motor Elevator1, vex::motor Elevator2, int speed)
+ {
+  Elevator.spin(vex::directionType::rev, speed, vex::velocityUnits::pct);
+  Elevator1.spin(vex::directionType::rev, speed, vex::velocityUnits::pct);
+  Elevator2.spin(vex::directionType::rev, speed, vex::velocityUnits::pct); 
+  return;
+ }
+
+ void userElevatorFwd(vex::motor Elevator,vex::motor Elevator1, vex::motor Elevator2, int speed)
+ {
+  Elevator.spin(vex::directionType::fwd, speed, vex::velocityUnits::pct);
+  Elevator1.spin(vex::directionType::fwd, speed, vex::velocityUnits::pct);
+  Elevator2.spin(vex::directionType::fwd, speed, vex::velocityUnits::pct); 
+  return;
+ }
+//END OF ELEVATOR FUNCTIONS
+
+ void userMoveFwd(vex::motor LM1,vex::motor LM11,
+                  vex::motor LM2,vex::motor LM21,
+                  vex::motor RM1,vex::motor RM11,
+                  vex::motor RM2,vex::motor RM21)
+ {
+  LM2.spin(vex::directionType::fwd, Controller2.Axis2.value() + Controller2.Axis4.value() - Controller2.Axis1.value(), vex::velocityUnits::pct);
+  LM21.spin(vex::directionType::fwd, Controller2.Axis2.value() + Controller2.Axis4.value() - Controller2.Axis1.value(), vex::velocityUnits::pct);
+  LM1.spin(vex::directionType::fwd, Controller2.Axis2.value() + Controller2.Axis4.value() + Controller2.Axis1.value(), vex::velocityUnits::pct);
+  LM11.spin(vex::directionType::fwd, Controller2.Axis2.value() + Controller2.Axis4.value() + Controller2.Axis1.value(), vex::velocityUnits::pct);
+  RM2.spin(vex::directionType::fwd, Controller2.Axis2.value() - Controller2.Axis4.value() + Controller2.Axis1.value(), vex::velocityUnits::pct);
+  RM21.spin(vex::directionType::fwd, Controller2.Axis2.value() - Controller2.Axis4.value() + Controller2.Axis1.value(), vex::velocityUnits::pct);
+  RM1.spin(vex::directionType::fwd, Controller2.Axis2.value() - Controller2.Axis4.value() - Controller2.Axis1.value(), vex::velocityUnits::pct);
+  RM11.spin(vex::directionType::fwd, Controller2.Axis2.value() - Controller2.Axis4.value() - Controller2.Axis1.value(), vex::velocityUnits::pct);
+  return;
+ }
+
+
 void usercontrol(void) {
 // User control code here, inside the loop
 while (1) {
@@ -83,103 +195,41 @@ while (1) {
   // ........................................................................
   // ........................................................................
   // drivetrain
- LM2.spin(vex::directionType::fwd, Controller2.Axis2.value() + Controller2.Axis4.value() - Controller2.Axis1.value(), vex::velocityUnits::pct);
-LM21.spin(vex::directionType::fwd, Controller2.Axis2.value() + Controller2.Axis4.value() - Controller2.Axis1.value(), vex::velocityUnits::pct);
-LM1.spin(vex::directionType::fwd, Controller2.Axis2.value() + Controller2.Axis4.value() + Controller2.Axis1.value(), vex::velocityUnits::pct);
-LM11.spin(vex::directionType::fwd, Controller2.Axis2.value() + Controller2.Axis4.value() + Controller2.Axis1.value(), vex::velocityUnits::pct);
-RM2.spin(vex::directionType::fwd, Controller2.Axis2.value() - Controller2.Axis4.value() + Controller2.Axis1.value(), vex::velocityUnits::pct);
-RM21.spin(vex::directionType::fwd, Controller2.Axis2.value() - Controller2.Axis4.value() + Controller2.Axis1.value(), vex::velocityUnits::pct);
-RM1.spin(vex::directionType::fwd, Controller2.Axis2.value() - Controller2.Axis4.value() - Controller2.Axis1.value(), vex::velocityUnits::pct);
-RM11.spin(vex::directionType::fwd, Controller2.Axis2.value() - Controller2.Axis4.value() - Controller2.Axis1.value(), vex::velocityUnits::pct);
+
+//robertControl(LM1,LM11,LM2,LM21, RM1, RM11, RM2, RM21);
+
+
+userMoveFwd(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21);
   int speed = 100;
 
   // lift
   if (Controller2.ButtonL2.pressing()) {
-    Elevator.spin(vex::directionType::fwd, speed, vex::velocityUnits::pct);
-    Elevator1.spin(vex::directionType::fwd, speed, vex::velocityUnits::pct);
-    Elevator2.spin(vex::directionType::fwd, speed, vex::velocityUnits::pct);
-  } else if (Controller2.ButtonL1.pressing()) {
-    Elevator.spin(vex::directionType::rev, speed, vex::velocityUnits::pct);
-    Elevator1.spin(vex::directionType::rev, speed, vex::velocityUnits::pct);
-    Elevator2.spin(vex::directionType::rev, speed, vex::velocityUnits::pct);
-  } else {
-    Elevator.stop(vex::brakeType::hold);
-    Elevator1.stop(vex::brakeType::hold);
-    Elevator2.stop(vex::brakeType::hold);
+    userElevatorFwd( Elevator, Elevator1,Elevator2, speed);
+  } 
+  else if (Controller2.ButtonL1.pressing()) {
+    userElevatorRev( Elevator, Elevator1,Elevator2, speed);
+  } 
+  else {
+    userElevatorStop( Elevator, Elevator1,Elevator2);
   }
+
   //wheel popping
   if (Controller2.ButtonB.pressing()) {
-  LM2.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
-  LM21.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
-  LM1.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
-  LM11.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
-  RM2.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
-  RM21.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
-  RM1.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
-  RM11.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
+  userWheelPoppingRev(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
   vex::task::sleep( 550 );
-  LM1.stop();
-  LM11.stop();
-  LM2.stop();
-  LM21.stop();
-RM1.stop();
-RM11.stop();
-RM2.stop();
-RM21.stop();
-LM2.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
-LM21.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
-LM1.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
-LM11.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
-RM2.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
-RM21.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
-RM1.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
-RM11.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
-vex::task::sleep( 500 );
-LM1.stop();
-LM11.stop();
-LM2.stop();
-LM21.stop();
-RM1.stop();
-RM11.stop();
-RM2.stop();
-RM21.stop();
+  userWheelStop( LM1, LM11,LM2,LM21,RM1, RM11,RM2, RM21);
+  userWheelPoppingFwd(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+  vex::task::sleep( 500 );
+  userWheelStop( LM1, LM11,LM2,LM21,RM1, RM11,RM2, RM21);
   }
 
   if (Controller2.ButtonA.pressing()) {
-  LM2.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
-  LM21.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
-  LM1.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
-  LM11.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
-  RM2.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
-  RM21.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
-  RM1.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
-  RM11.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  userWheelPoppingFwd(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
   vex::task::sleep( 550 );
-  LM1.stop();
-  LM11.stop();
-  LM2.stop();
-  LM21.stop();
-RM1.stop();
-RM11.stop();
-RM2.stop();
-RM21.stop();
-LM2.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
-LM21.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
-LM1.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
-LM11.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
-RM2.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
-RM21.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
-RM1.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
-RM11.spin(vex::directionType::rev,speed,vex::velocityUnits::pct);
-vex::task::sleep( 500 );
-LM1.stop();
-LM11.stop();
-LM2.stop();
-LM21.stop();
-RM1.stop();
-RM11.stop();
-RM2.stop();
-RM21.stop();
+  userWheelStop( LM1, LM11,LM2,LM21,RM1, RM11,RM2, RM21);
+  userWheelPoppingRev(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+  vex::task::sleep( 500 );
+  userWheelStop( LM1, LM11,LM2,LM21,RM1, RM11,RM2, RM21);
   }
   
   vex::task::sleep(20); // Sleep the task for a short amount of time to

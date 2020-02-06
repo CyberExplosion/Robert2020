@@ -21,22 +21,22 @@ int slow=60;
 
 int speed = slow;
 
-botBackward(LM1,LM11, LM2, LM21, RM1, RM11,  RM2, RM21, speed);
+// botBackward(LM1,LM11, LM2, LM21, RM1, RM11,  RM2, RM21, speed);
 
-vex::task::sleep( 1700 );
+// vex::task::sleep( 1700 );
 
-botStop(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21);
+// botStop(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21);
 
-botForward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+// botForward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
 
-vex::task::sleep( 1000 );
+// vex::task::sleep( 1000 );
 
-botStop(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21);
+// botStop(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21);
 
 
-botForward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-vex::task::sleep( 1000 );
-botStop(LM1,LM11,LM2, LM21,RM1, RM11,RM2, RM21);
+// botForward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+// vex::task::sleep( 1000 );
+// botStop(LM1,LM11,LM2, LM21,RM1, RM11,RM2, RM21);
 
 /*
 
@@ -52,6 +52,26 @@ botStop(LM1,LM11,
  RM2, RM21 );
 */
 
+
+
+//ADVANCED AUTONOMOUS MOVING TWO BLOCKS TO THE GOAL
+botBackward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 500 );
+
+strafeRight(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 1100);
+
+botForward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 500 );
+strafeLeft(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 1000 );
+botBackward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 500 );
+strafeLeft(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 1000 );
+botForward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 1000 );
+botStop(LM1,LM11,LM2, LM21,RM1, RM11,RM2, RM21);
 }
 
 //STOP
