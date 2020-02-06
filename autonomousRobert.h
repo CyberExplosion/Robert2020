@@ -22,7 +22,7 @@ vex::motor LM2 = vex::motor(vex::PORT13, true);
 vex::motor LM21 = vex::motor(vex::PORT12, false);
 
 
-vex::controller Controller2 = vex::controller();
+vex::controller Controller1 = vex::controller();
 vex::motor Elevator = vex::motor(vex::PORT5, false);
 vex::motor Elevator1 = vex::motor(vex::PORT6, true);
 vex::motor Elevator2 = vex::motor(vex::PORT7, true);
