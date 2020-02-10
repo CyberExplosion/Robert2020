@@ -14,6 +14,7 @@
 #include "vex.h"
 #include "autonomousRobert.h"
 #include "userRobert.h"
+#include "displayRobert.h"
 #include <algorithm>
 #include <cmath>
 using namespace vex;
@@ -84,8 +85,8 @@ while (1) {
   // values based on feedback from the joysticks.
   // ........................................................................
   // ........................................................................
+//displayRobert robertController(LM1,LM11,LM2,LM21, RM1, RM11, RM2, RM21, Elevator, Elevator1, Elevator2, Controller1 );
 userRobert robertControl(LM1,LM11,LM2,LM21, RM1, RM11, RM2, RM21, Elevator, Elevator1, Elevator2, Controller1 );
-
 
 }
 vexcodeInit();
@@ -101,6 +102,7 @@ int main() {
 // Set up callbacks for autonomous and driver control periods.
 Competition.autonomous(autonomous);
 Competition.drivercontrol(usercontrol);
+
 
 //TESTING CONTROLLER DISPLAY
 

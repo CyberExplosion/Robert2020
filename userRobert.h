@@ -5,10 +5,6 @@
 class userRobert
 {
 private:
-int slow=60;
-int fast=100;
-int slower=15;
-
 vex::motor RM1 = vex::motor(vex::PORT10, false);
 vex::motor RM11 = vex::motor(vex::PORT9, true);
 

@@ -1,4 +1,3 @@
-#include "vex.h"
 #include "userRobert.h"
 userRobert::userRobert(vex::motor _LM1,vex::motor _LM11,
 vex::motor _LM2,vex::motor _LM21,

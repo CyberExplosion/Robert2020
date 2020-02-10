@@ -20,25 +20,68 @@ vex::motor RM21 = _RM21;
 int slow=60;
 
 int speed = slow;
-
-// botBackward(LM1,LM11, LM2, LM21, RM1, RM11,  RM2, RM21, speed);
-
-// vex::task::sleep( 1700 );
-
-// botStop(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21);
-
-// botForward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-
-// vex::task::sleep( 1000 );
-
-// botStop(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21);
+//obtain distance per second
+//1000ms = 1 sec
 
 
-// botForward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-// vex::task::sleep( 1000 );
-// botStop(LM1,LM11,LM2, LM21,RM1, RM11,RM2, RM21);
+
+//MAX GRIP
+//length of bot 13x13
+//1000 ms = 37 inches in total with the bot
+//24 inches traveled?
+//27ms per inch
+
+
+//COMPETITON GRIP
+
+
+//ADVANCED AUTONOMOUS MOVING TWO BLOCKS TO THE GOAL
+botBackward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 27 );
+
+
+// ~33inches
+strafeRight(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 1500);
+// ~8inches
+botForward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 220 );
+// ~33inches
+strafeLeft(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 1000 );
+// ~8inches
+botBackward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 220 );
+// ~12inches
+strafeLeft(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 220);
+// ~48inches
+botForward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 1300 );
+// ~24inches
+botBackward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 650 );
+
+
+botStop(LM1,LM11,LM2, LM21,RM1, RM11,RM2, RM21);
+
+
+
+
+
 
 /*
+botBackward(LM1,LM11, LM2, LM21, RM1, RM11,  RM2, RM21, speed);
+vex::task::sleep( 1700 );
+botStop(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21);
+botForward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 1000 );
+botStop(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21);
+botForward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 1000 );
+botStop(LM1,LM11,LM2, LM21,RM1, RM11,RM2, RM21);
+
+//OTHER CODE IF AT OTHER SIDE?
 
 LM2forward(LM2,LM21 ,speed);
 LM1reverse(LM1,LM11 ,speed);
@@ -50,28 +93,13 @@ botStop(LM1,LM11,
  LM2, LM21,  
  RM1, RM11,  
  RM2, RM21 );
+
 */
 
 
 
-//ADVANCED AUTONOMOUS MOVING TWO BLOCKS TO THE GOAL
-botBackward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-vex::task::sleep( 500 );
 
-strafeRight(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-vex::task::sleep( 1100);
 
-botForward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-vex::task::sleep( 500 );
-strafeLeft(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-vex::task::sleep( 1000 );
-botBackward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-vex::task::sleep( 500 );
-strafeLeft(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-vex::task::sleep( 1000 );
-botForward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-vex::task::sleep( 1000 );
-botStop(LM1,LM11,LM2, LM21,RM1, RM11,RM2, RM21);
 }
 
 //STOP
