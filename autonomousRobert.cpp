@@ -27,8 +27,6 @@ int speed = slow;
 resetAutonPosition(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21);
 
 
-
-
 //COMPETITON GRIP
 
 
