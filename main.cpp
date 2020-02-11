@@ -15,26 +15,15 @@
 #include "autonomousRobert.h"
 #include "userRobert.h"
 #include "displayRobert.h"
+#include "robot-config.h"
 #include <algorithm>
 #include <cmath>
 using namespace vex;
-vex::motor RM1 = vex::motor(vex::PORT10, false);
-vex::motor RM11 = vex::motor(vex::PORT9, true);
-
-vex::motor RM2 = vex::motor(vex::PORT20, false);
-vex::motor RM21 = vex::motor(vex::PORT19, true);
-
-vex::motor LM1 = vex::motor(vex::PORT15, true);
-vex::motor LM11 = vex::motor(vex::PORT16, false);
-
-vex::motor LM2 = vex::motor(vex::PORT13, true);
-vex::motor LM21 = vex::motor(vex::PORT12, false);
 
 
-vex::controller Controller1 = vex::controller();
-vex::motor Elevator = vex::motor(vex::PORT5, false);
-vex::motor Elevator1 = vex::motor(vex::PORT6, true);
-vex::motor Elevator2 = vex::motor(vex::PORT7, true);
+
+
+
 
 // A global instance of competition
 competition Competition;
@@ -64,6 +53,7 @@ vexcodeInit();
 /*  You must modify the code to add your own robot specific commands here.   */
 /*---------------------------------------------------------------------------*/
 void autonomous(void) {
+
 autonomousRobert newRobert(LM1,LM11,LM2,LM21, RM1, RM11, RM2, RM21);
 }
 /*---------------------------------------------------------------------------*/
@@ -100,6 +90,7 @@ vexcodeInit();
 //
 int main() {
 // Set up callbacks for autonomous and driver control periods.
+vexcodeInit();
 Competition.autonomous(autonomous);
 Competition.drivercontrol(usercontrol);
 

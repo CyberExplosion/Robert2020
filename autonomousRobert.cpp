@@ -5,14 +5,14 @@ vex::motor _LM2,vex::motor _LM21,
 vex::motor _RM1,vex::motor _RM11,
 vex::motor _RM2,vex::motor _RM21)
 {
-vex::motor LM1 = _LM1;
-vex::motor LM11 = _LM11;
+vex::motor LM1 = _LM1; //left motor 1
+vex::motor LM11 = _LM11; //left motor 1 of 1
 
-vex::motor LM2 = _LM2;
+vex::motor LM2 = _LM2; 
 vex::motor LM21 = _LM21;
 
-vex::motor RM1 = _RM1;
-vex::motor RM11 = _RM11;
+vex::motor RM1 = _RM1; //right motor 1
+vex::motor RM11 = _RM11; //right motor 1 of 1
 
 vex::motor RM2 = _RM2;
 vex::motor RM21 = _RM21;
@@ -23,19 +23,16 @@ int speed = slow;
 //obtain distance per second
 //1000ms = 1 sec
 
+//RESET POSITION
+resetAutonPosition(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21);
 
 
-//MAX GRIP
-//length of bot 13x13
-//1000 ms = 37 inches in total with the bot
-//24 inches traveled?
-//27ms per inch
 
 
 //COMPETITON GRIP
 
 
-//ADVANCED AUTONOMOUS MOVING TWO BLOCKS TO THE GOAL
+//MOVING TWO BLOCKS TO THE GOAL
 botBackward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
 vex::task::sleep( 27 );
 
@@ -68,8 +65,7 @@ botStop(LM1,LM11,LM2, LM21,RM1, RM11,RM2, RM21);
 
 
 
-
-
+//ONLY GETTING ONE BLOCK 
 /*
 botBackward(LM1,LM11, LM2, LM21, RM1, RM11,  RM2, RM21, speed);
 vex::task::sleep( 1700 );
@@ -101,6 +97,28 @@ botStop(LM1,LM11,
 
 
 }
+
+void autonomousRobert::resetAutonPosition(vex::motor LM1,vex::motor LM11 ,
+vex::motor LM2,vex::motor LM21 ,
+vex::motor RM1,vex::motor RM11 ,
+vex::motor RM2,vex::motor RM21)
+{
+  LM1.setPosition(0, degrees);
+  LM11.setPosition(0, degrees);
+  LM2.setPosition(0, degrees);
+  LM21.setPosition(0, degrees);
+  RM1.setPosition(0, degrees);
+  RM11.setPosition(0, degrees);
+  RM2.setPosition(0, degrees);
+  RM21.setPosition(0, degrees);
+
+  return;
+}
+
+//MOTOR ROTATION
+
+//MOTOR
+
 
 //STOP
 void autonomousRobert::LM1stop(vex::motor LM1,vex::motor LM11 )
