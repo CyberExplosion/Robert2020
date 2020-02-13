@@ -18,49 +18,53 @@ vex::motor RM2 = _RM2;
 vex::motor RM21 = _RM21;
 
 int slow=60;
-
 int speed = slow;
-//obtain distance per second
-//1000ms = 1 sec
 
 //RESET POSITION
 resetAutonPosition(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21);
 
 
-//COMPETITON GRIP
-
 
 //MOVING TWO BLOCKS TO THE GOAL
 botBackward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-vex::task::sleep( 27 );
-
-
+vex::task::sleep( 150 );
+botStop(LM1,LM11,LM2, LM21,RM1, RM11,RM2, RM21);
 // ~33inches
 strafeRight(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-vex::task::sleep( 1500);
+vex::task::sleep( 1600);
+botStop(LM1,LM11,LM2, LM21,RM1, RM11,RM2, RM21);
 // ~8inches
 botForward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-vex::task::sleep( 220 );
+vex::task::sleep( 400 );
+botStop(LM1,LM11,LM2, LM21,RM1, RM11,RM2, RM21);
 // ~33inches
 strafeLeft(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-vex::task::sleep( 1000 );
+vex::task::sleep( 1300 );
+botStop(LM1,LM11,LM2, LM21,RM1, RM11,RM2, RM21);
+//to not make bot touch blocks
+strafeRight(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 300);
+botStop(LM1,LM11,LM2, LM21,RM1, RM11,RM2, RM21);
 // ~8inches
 botBackward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-vex::task::sleep( 220 );
-// ~12inches
-strafeLeft(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-vex::task::sleep( 220);
-// ~48inches
-botForward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-vex::task::sleep( 1300 );
-// ~24inches
-botBackward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
-vex::task::sleep( 650 );
-
-
+vex::task::sleep( 700 );
 botStop(LM1,LM11,LM2, LM21,RM1, RM11,RM2, RM21);
 
+// // ~12inches
+strafeLeft(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 800);
+botStop(LM1,LM11,LM2, LM21,RM1, RM11,RM2, RM21);
+// ~48inches
+botForward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 1900 );
+botStop(LM1,LM11,LM2, LM21,RM1, RM11,RM2, RM21);
+// ~24inches
+//can be any time >500
+botBackward(LM1,LM11,LM2,LM21,RM1,RM11,RM2,RM21,speed);
+vex::task::sleep( 900);
+botStop(LM1,LM11,LM2, LM21,RM1, RM11,RM2, RM21);
 
+//END OF TWO BLOCK 
 
 
 //ONLY GETTING ONE BLOCK 
@@ -151,15 +155,15 @@ void autonomousRobert::RM2stop(vex::motor RM2,vex::motor RM21 )
 //FORWARD
 void autonomousRobert::LM1forward(vex::motor LM1,vex::motor LM11 ,int speed)
 {
-  LM1.spin(vex::directionType::fwd,slower,vex::velocityUnits::pct);
-  LM11.spin(vex::directionType::fwd,slower,vex::velocityUnits::pct);
+  LM1.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  LM11.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
   return;
 }
 
 void autonomousRobert::LM2forward(vex::motor LM2,vex::motor LM21 ,int speed)
 {
-  LM2.spin(vex::directionType::fwd,slower,vex::velocityUnits::pct);
-  LM21.spin(vex::directionType::fwd,slower,vex::velocityUnits::pct);
+  LM2.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
+  LM21.spin(vex::directionType::fwd,speed,vex::velocityUnits::pct);
   return;
 }
 
